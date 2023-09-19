@@ -1,12 +1,12 @@
 <mat-card class="mb-4">
     <div class="flex justify-between">
         <div>
-            <button mat-button [matMenuTriggerFor]="sortByMenu"]>
+            <button mat-button [matMenuTriggerFor]="sortByMenu">
                 Sortieren nach {{sort}}
             </button>
             <mat-menu #sortByMenu="matMenu">
-                <button (click)="onSortUpdated('Preis absteigend')" mat-menu-item>desc</button>
-                <button (click)="onSortUpdated('Preis aufsteigend')" mat-menu-item>asc</button>
+                <button (click)="onSortUpdated('Preis absteigend')" mat-menu-item>absteigend</button>
+                <button (click)="onSortUpdated('Preis aufsteigend')" mat-menu-item>aufsteigend</button>
             </mat-menu>
         </div>
         <div class="flex items-center">

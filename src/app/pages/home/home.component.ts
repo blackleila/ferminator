@@ -1,12 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
 cols = 3;
-  onColumnsCountChange(colsNum: number){
+
+constructor(){
+
+}
+
+ngOnInit(): void{
+
+}
+
+  onColumnsCountChange(colsNum: number): void{
     this.cols = colsNum;
   }
 }
