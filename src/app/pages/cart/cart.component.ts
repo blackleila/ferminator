@@ -11,8 +11,15 @@ export class CartComponent implements OnInit {
       {
         product: "https://via.placeholder.com/150",
         name: "30g Wasserkefir",
-        price: "3.99",
+        price: 3.99,
         quantity: 1,
+        id: 1,
+      },
+      {
+        product: "https://via.placeholder.com/150",
+        name: "30g Wasserkefir",
+        price: 3.99,
+        quantity: 3,
         id: 1,
       },
     ],
@@ -21,14 +28,20 @@ export class CartComponent implements OnInit {
   dataSource: Array<CartItem> = [];
   displayedColumns: Array<string> = [
     "product",
-    // "name",
-    // "price",
-    // "quantity",
-    // "total",
-    // "action",
+    "name",
+    "price",
+    "quantity",
+    "total",
+    "action",
   ];
 
   ngOnInit(): void {
     this.dataSource = this.cart.items;
+  }
+
+  getTotal(items: Array<CartItem>): number {
+    return items
+      .map((item) => item.price * item.quantity)
+      .reduce((prev, current) => prev + current, 0);
   }
 }
